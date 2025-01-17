@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(13, 13, 19);
+}
+
+header {
+    color: tomato;
+    text-align: center;
+}
+
+main {
+    color: rgb(255, 164, 80);
+}
+
+footer {
+    color: wheat;
+    position: static;
+    clear: both;
+}
+
+#Github {
+    color: aqua;
+}
+
+#modes button {
+    border-radius: 10px;
+    color: rgb(218, 193, 164);
+    background-color: rgb(51, 45, 38);
+    margin: 10px;
+    padding: 10px;
+    font-size: 2em;
+    transition: 0.2s ease;
+}
+
+#modes button:hover {
+    background-color: rgb(124, 121, 106);
+}
+
+#modes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnOptions {
+    width: 150px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    font-family: monospace;
+    font-size: 4em;
+    border: 10px solid rgb(129, 129, 129);
+    margin: 10px;
+    box-shadow: 5px 5px 6px rgb(68, 68, 68);
+    background-color: rgb(127, 214, 185);
+    transition: 0.2s ease;
+}
+
+.btnOptions:hover {
+    background-color: rgb(58, 148, 121);
+}
+
+#navbar {
+    background-color: gray
+}
+
+@media screen and (max-width:700px) {
+
+    /*selection,selection,selection{
+        property:decleration value
+    }*/
+    .btnOptions {
+        font-size: 2em;
+    }
+
+    #modes button {
+        font-size: 1em;
+    }
+}
