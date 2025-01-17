@@ -91,125 +91,140 @@ function btnClick(tipe) {
                     break;
 
                 case `Hard 😬`:
-                    console.log('')
-                    switch (prev) {
-                        case `r`:
 
-                            if (pWeight > 4) {
-                                pWeight = 0
-                                rWeight = 0
-                                cWeight = 0
-                            };
-                            pWeight++;
+                    if (prev === preprev && prev === tipe) {
+                        if (prev === `c`) {
+                            cPlay = `r`
+                        } else if (prev === `r`) {
+                            cPlay = `p`
+                        } else if (prev === `p`) {
+                            cPlay = `c`
+                        };
+
+                    } else {
+                        switch (prev) {
+                            case `r`:
+
+                                if (pWeight > 4) {
+                                    pWeight = 0
+                                    rWeight = 0
+                                    cWeight = 0
+                                };
+                                pWeight++;
 
 
-                            if (pWeight > rWeight) {
 
-                                if (pWeight > cWeight) {
-                                    cPlay = `p`
-                                } else if (pWeight < cWeight) {
-                                    cPlay = `c`
-                                }
+                                if (pWeight > rWeight) {
 
-                            } else if (pWeight < rWeight) {
+                                    if (pWeight > cWeight) {
+                                        cPlay = `p`
+                                    } else if (pWeight < cWeight) {
+                                        cPlay = `c`
+                                    }
 
+                                } else if (pWeight < rWeight) {
+
+                                    if (cWeight > rWeight) {
+                                        cPlay = `c`
+                                    } else if (cWeight < rWeight) {
+                                        cPlay = `r`
+                                    }
+
+                                } else {
+                                    if (randomRange(3, 1) === 1) {
+                                        cPlay = `r`
+                                    } else if (randomRange(3, 1) === 2) {
+                                        cPlay = `p`
+                                    } else {
+                                        cPlay = `c`
+                                    };
+                                };
+
+                                break;
+
+                            case `p`:
+                                if (cWeight > 4) {
+                                    pWeight = 0
+                                    rWeight = 0
+                                    cWeight = 0
+                                };
+                                cWeight++;
                                 if (cWeight > rWeight) {
-                                    cPlay = `c`
-                                } else if (cWeight < rWeight) {
-                                    cPlay = `r`
-                                }
 
-                            } else {
+                                    if (pWeight > rWeight) {
+                                        cPlay = `p`
+                                    } else if (pWeight < rWeight) {
+                                        cPlay = `c`
+                                    }
+
+                                } else if (cWeight < rWeight) {
+
+                                    if (pWeight > rWeight) {
+                                        cPlay = `c`
+                                    } else if (pWeight < rWeight) {
+                                        cPlay = `r`
+                                    }
+
+                                } else {
+                                    if (randomRange(3, 1) === 1) {
+                                        cPlay = `r`
+                                    } else if (randomRange(3, 1) === 2) {
+                                        cPlay = `p`
+                                    } else {
+                                        cPlay = `c`
+                                    };
+                                };
+
+                                break;
+
+                            case `c`:
+                                if (rWeight > 4) {
+                                    pWeight = 0
+                                    rWeight = 0
+                                    cWeight = 0
+                                };
+                                rWeight++;
+                                if (pWeight > rWeight) {
+
+                                    if (pWeight > cWeight) {
+                                        cPlay = `p`
+                                    } else if (pWeight < cWeight) {
+                                        cPlay = `c`
+                                    }
+
+                                } else if (pWeight < rWeight) {
+
+                                    if (cWeight > rWeight) {
+                                        cPlay = `c`
+                                    } else if (cWeight < rWeight) {
+                                        cPlay = `r`
+                                    }
+
+                                } else {
+                                    if (randomRange(3, 1) === 1) {
+                                        cPlay = `r`
+                                    } else if (randomRange(3, 1) === 2) {
+                                        cPlay = `p`
+                                    } else {
+                                        cPlay = `c`
+                                    };
+                                };
+                                break;
+
+                            case ``:
+
                                 if (randomRange(3, 1) === 1) {
                                     cPlay = `r`
                                 } else if (randomRange(3, 1) === 2) {
                                     cPlay = `p`
-                                } else {
-                                    cPlay = `c`
-                                };
-                            };
-
-                            break;
-
-                        case `p`:
-                            if (cWeight > 4) {
-                                pWeight = 0
-                                rWeight = 0
-                                cWeight = 0
-                            };
-                            cWeight++;
-                            if (pWeight > rWeight) {
-
-                                if (pWeight > cWeight) {
-                                    cPlay = `p`
-                                } else if (pWeight < cWeight) {
-                                    cPlay = `c`
-                                }
-
-                            } else if (pWeight < rWeight) {
-
-                                if (cWeight > rWeight) {
-                                    cPlay = `c`
-                                } else if (cWeight < rWeight) {
-                                    cPlay = `r`
-                                }
-
-                            } else {
-                                if (randomRange(3, 1) === 1) {
-                                    cPlay = `r`
                                 } else if (randomRange(3, 1) === 2) {
-                                    cPlay = `p`
-                                } else {
                                     cPlay = `c`
                                 };
-                            };
-                            break;
+                                break;
 
-                        case `c`:
-                            if (rWeight > 4) {
-                                pWeight = 0
-                                rWeight = 0
-                                cWeight = 0
-                            };
-                            rWeight++;
-                            if (pWeight > rWeight) {
-
-                                if (pWeight > cWeight) {
-                                    cPlay = `p`
-                                } else if (pWeight < cWeight) {
-                                    cPlay = `c`
-                                }
-
-                            } else if (pWeight < rWeight) {
-
-                                if (cWeight > rWeight) {
-                                    cPlay = `c`
-                                } else if (cWeight < rWeight) {
-                                    cPlay = `r`
-                                }
-
-                            } else {
-                                if (randomRange(3, 1) === 1) {
-                                    cPlay = `r`
-                                } else if (randomRange(3, 1) === 2) {
-                                    cPlay = `p`
-                                } else {
-                                    cPlay = `c`
-                                };
-                            };
-                            break;
-
-                        case ``:
-                            if (randomRange(3, 1) === 1) {
-                                cPlay = `r`
-                            } else if (randomRange(3, 1) === 2) {
-                                cPlay = `p`
-                            } else {
-                                cPlay = `c`
-                            };
-                            break;
-
+                        };
                     };
+
 
                     break;
 
@@ -302,15 +317,10 @@ function btnClick(tipe) {
         losetxt.textContent = `lose: ${iLose}`
         tietxt.textContent = `tie: ${iTie}`
 
-        console.log(tipe)
-        console.log(cPlay)
-        console.log('')
-
-
-
     }
 
 }
+
 
 function randomRange(iMax, iMin) {
     return Math.floor(Math.random() * (iMax - iMin + 1)) + iMin
